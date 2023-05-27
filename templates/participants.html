@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Showcase Hackathon Participants</title>
+</head>
+<body>
+	<h1>Showcase Hackathon Participants</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Username</th>
+				<th>Headline</th>
+                <th>Resume</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for participant in participants %}
+			<tr>
+				<td>{{ participant['username'] }}</td>
+                <td>{{ participant['headline'] }}</td>
+				<td><a href="{{ participant['resumeUrl'] }}" target="_blank">View Resume</a></td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<form method="GET">
+		<input type="hidden" name="next_page_number" value="{{ page_number+1 }}">
+        <input type="submit" name="action" value="Next Page">
+        <input type="hidden" name="prev_page_number" value="{{ page_number-1 }}">
+        <input type="submit" name="action" value="Previous Page">
+	</form>
+</body>
+</html>
