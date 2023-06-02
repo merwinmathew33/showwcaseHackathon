@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def get_hackathon_participants():
-    api_key = '066b23ac7287f5acc661b39edbf3a3710eecf1afa1ffbbea17'
+    api_key = 'write yout api'
     hackathon_id = 'hackfest-2023'
 
     # Get current page number from request args
